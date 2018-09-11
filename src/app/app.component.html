@@ -1,20 +1,318 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
 
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              Basic dropdown<span class="caret"></span></a>
+              <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                  <div class="divider dropdown-divider"></div>
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+              </div>
+          </li>
+
+      </ul>
+      <!-- Links -->
+
+<!-- Search form -->
+      <form class="form-inline waves-light" mdbWavesEffect>
+          <div class="md-form mt-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          </div>
+      </form>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+<br>
+<br>
+<!--Author box-->
+<div class="author-box">
+  <!--Name-->
+  <h3 class="h3-responsive text-center">About author</h3>
+  <hr>
+  <div class="row">
+      <!--Avatar-->
+      <div class="col-12 col-sm-2">
+          <img src="http://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="img-fluid rounded-circle z-depth-2">
+      </div>
+      <!--Author Data-->
+      <div class=" col-12 col-sm-10">
+          <p><strong>John Doe</strong></p>
+          <div class="personal-sm">
+              <a class="email-ic"><i class="fa fa-home"> </i></a>
+              <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
+              <a class="tw-ic"><i class="fa fa-twitter"> </i></a>
+              <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
+              <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
+              <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
+          </div>
+          <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+          <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint esse nulla quia quam veniam commodi dicta, iusto inventore. Voluptatum pariatur eveniet ea, officiis vitae praesentium beatae quas libero, esse facere.
+          </p>
+      </div>
+  </div>
+</div>
+<!--/.Author box-->
+
+<br>
+<br>
+<!--Main wrapper-->
+<div class="comments-list text-left">
+  <div class="section-heading">
+      <h3>Comments <span class="badge blue">3</span></h3>
+  </div>
+  <!--First row-->
+  <div class="row">
+      <!--Image column-->
+      <div class="col-sm-2 col-12">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" class="avatar rounded-circle z-depth-1-half">
+      </div>
+      <!--/.Image column-->
+      <!--Content column-->
+      <div class="col-sm-10 col-12">
+          <a><h3 class="user-name">John Doe</h3></a>
+          <div class="card-data">
+              <ul class="pl-0 list-unstyled">
+                  <li class="comment-date"><i class="fa fa-clock-o"></i> 05/10/2015</li>
+              </ul>
+          </div>
+          <p class="comment-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+      <!--/.Content column-->
+  </div>
+  <!--/.First row-->
+  <!--Second row-->
+  <div class="row">
+      <!--Image column-->
+      <div class="col-sm-2 col-12">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="avatar rounded-circle z-depth-1-half">
+      </div>
+      <!--/.Image column-->
+      <!--Content column-->
+      <div class="col-sm-10 col-12">
+          <a><h3 class="user-name">Marta Tev</h3></a>
+          <div class="card-data">
+              <ul class="pl-0 list-unstyled">
+                  <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
+              </ul>
+          </div>
+          <p class="comment-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
+      </div>
+      <!--/.Content column-->
+  </div>
+  <!--/.Second row-->
+  <!--Third row-->
+  <div class="row">
+      <!--Image column-->
+      <div class="col-sm-2 col-12">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="avatar rounded-circle z-depth-1-half">
+      </div>
+      <!--/.Image column-->
+      <!--Content column-->
+      <div class="col-sm-10 col-12">
+          <a><h3 class="user-name">Anna Maria</h3></a>
+          <div class="card-data">
+              <ul class="pl-0 list-unstyled">
+                  <li class="comment-date"><i class="fa fa-clock-o"></i> 17/10/2015</li>
+              </ul>
+          </div>
+          <p class="comment-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.
+          </p>
+      </div>
+      <!--/.Content column-->
+  </div>
+  <!--/.Third row-->
+</div>
+<!--/.Main wrapper-->
+
+<br>
+<br>
+<!--Section: Leave a reply (Logged In User)-->
+<section>
+
+  <!--Leave a reply form-->
+  <div class="reply-form">
+      <h2 class="h1 section-heading">Leave a reply </h2>
+      <p class="text-center">(Logged In User)</p>
+
+      <!--Third row-->
+      <div class="row">
+          <!--Image column-->
+          <div class="col-sm-2 col-12">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" class="avatar rounded-circle z-depth-1-half">
+          </div>
+          <!--/.Image column-->
+
+          <!--Content column-->
+          <div class="col-sm-10 col-12">
+              <div class="md-form">
+                  <textarea type="text" id="form8" class="md-textarea form-control" mdbInputDirective></textarea>
+                  <label for="form8">Your message</label>
+              </div>
+
+          </div>
+
+          <div class="text-center mx-auto">
+              <button mdbBtn color="primary" class="waves-light" mdbWavesEffect>Submit</button>
+          </div>
+          <!--/.Content column-->
+
+      </div>
+      <!--/.Third row-->
+  </div>
+  <!--/.Leave a reply form-->
+
+</section>
+<!--/Section: Leave a reply (Logged In User)-->
+<br>
+<br>
+
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Very long link 1</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 2</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 3</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/angular/angular-tutorial/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
