@@ -1,7 +1,4 @@
-<div class="button-row">
-  <a mat-raised-button color="primary" [routerLink]="['/documents']"><mat-icon>list</mat-icon></a>
-</div>
-<form [formGroup]="documentForm" (ngSubmit)="onFormSubmit(documentForm.value)">
+<form [formGroup]="documentForm" (ngSubmit)="onFormSubmit()">
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Theme" formControlName="theme"
       [errorStateMatcher]="matcher">

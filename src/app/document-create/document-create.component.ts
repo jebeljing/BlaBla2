@@ -33,8 +33,9 @@ export class DocumentCreateComponent implements OnInit {
     });
   }
 
-  onFormSubmit(form: NgForm) {
-    this.api.postDocument(form)
+  onFormSubmit(f) {
+    this.documentForm.controls['vocabulary'].setValue(this.documentForm.value.vocabulary.split(","));
+    this.api.postDocument(this.documentForm.value)
       .subscribe(res => {
         let id = res['_id'];
         this.router.navigate(['/document-details', id]);
