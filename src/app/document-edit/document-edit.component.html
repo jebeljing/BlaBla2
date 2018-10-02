@@ -1,3 +1,42 @@
-<p>
-  document-edit works!
-</p>
+<div class="button-row">
+  <a mat-raised-button color="primary" (click)="documentDetails()"><mat-icon>show</mat-icon></a>
+</div>
+<form [formGroup]="documentForm" (ngSubmit)="onFormSubmit(documentForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Theme" formControlName="theme"
+           [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Title" formControlName="title"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!documentForm.get('title').valid && documentForm.get('title').touched">Please enter Document Title</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Author" formControlName="author"
+           [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Body" formControlName="body"
+           [errorStateMatcher]="matcher"></textarea>
+    <mat-error>
+      <span *ngIf="!documentForm.get('body').valid && documentForm.get('body').touched">Please enter Document Body</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Vocabulary" formControlName="vocabulary"
+           [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Phrases" formControlName="phrases"
+           [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Date" formControlName="date"
+           [errorStateMatcher]="matcher">
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!documentForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

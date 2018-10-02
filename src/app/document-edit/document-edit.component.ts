@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ApiService } from '../api.service';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-document-edit',
@@ -7,9 +10,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentEditComponent implements OnInit {
 
-  constructor() { }
+  documentForm: FormGroup;
+  id: string = '';
+  theme: string = '';
+  title: string = '';
+  body: string = '';
+  author: string = '';
+  date: string = '';
+  vocabulary: string[] = [];
+  phrases: string[] = [];
+
+  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.getDocument(this.route.snapshot.params['id']);
+    this.documentForm = this.formBuilder.group({
+      'theme': [null],
+      'title': [null, Validators.required],
+      'author': [null],
+      'vocabulary': [null],
+      'phrases': [null],
+      'date': [null],
+      'body': [null, Validators.required]
+    });
+  }
+
+  getDocument(id) {
+    this.api.getDocument(id).subscribe(data => {
+      this.id = data._id;
+      this.documentForm.setValue({
+        theme: data.theme,
+        title: data.title,
+        body: data.body,
+        author: data.author,
+        date: data.date,
+        vocabulary: data.vocabulary,
+        phrases: data.phrases
+      });
+    });
+  }
+
+  onFormSubmit(form:NgForm) {
+    this.api.updateDocument(this.id, form)
+      .subscribe(res => {
+        let id = res['_id'];
+        this.router.navigate(['/document-details', id]);
+      }, (err) => {
+        console.log(err);
+      });
+  }
+
+  documentDetails() {
+    this.router.navigate(['/document-details', this.id]);
   }
 
 }
