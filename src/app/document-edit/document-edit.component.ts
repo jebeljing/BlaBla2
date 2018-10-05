@@ -50,8 +50,16 @@ export class DocumentEditComponent implements OnInit {
     });
   }
 
-  onFormSubmit(form:NgForm) {
-    this.api.updateDocument(this.id, form)
+  onFormSubmit() {
+    if (this.documentForm.value.vocabulary != null) {
+      this.documentForm.controls['vocabulary']
+        .setValue(this.documentForm.value.vocabulary.split(","));
+    }
+    if (this.documentForm.value.phrases != null) {
+      this.documentForm.controls['phrases']
+        .setValue(this.documentForm.value.phrases.split(","));
+    }
+    this.api.updateDocument(this.id, this.documentForm.value)
       .subscribe(res => {
         let id = res['_id'];
         this.router.navigate(['/document-details', id]);
