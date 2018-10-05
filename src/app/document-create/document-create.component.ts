@@ -34,7 +34,11 @@ export class DocumentCreateComponent implements OnInit {
   }
 
   onFormSubmit(f) {
-    this.documentForm.controls['vocabulary'].setValue(this.documentForm.value.vocabulary.split(","));
+    this.documentForm.controls['vocabulary']
+      .setValue(this.documentForm.value.vocabulary.split(","));
+    this.documentForm.controls['phrases']
+      .setValue(this.documentForm.value.phrases.split(","));
+    
     this.api.postDocument(this.documentForm.value)
       .subscribe(res => {
         let id = res['_id'];

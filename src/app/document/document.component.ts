@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-document',
@@ -14,7 +16,7 @@ export class DocumentComponent implements OnInit {
   displayedColumns = ['theme', 'title', 'vocabulary', 'phrases'];
   dataSource = new DocumentDataSource(this.api);
   
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.api.getDocuments()
@@ -22,6 +24,21 @@ export class DocumentComponent implements OnInit {
         console.log(res);
         this.documents = res;
       }, err => {
+        console.log(err);
+      });
+  }
+
+  deleteDocument(id) {
+    this.api.deleteDocument(id)
+      .subscribe(res => {
+        // this.router.navigate(['/documents']);
+        this.api.getDocuments()
+          .subscribe(res => {
+            this.documents = res;
+          }, err => {
+            console.log(err);
+          });
+      }, (err) => {
         console.log(err);
       });
   }
