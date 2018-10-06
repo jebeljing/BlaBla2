@@ -49,7 +49,7 @@ export class DocumentCreateComponent implements OnInit {
         this.router.navigate(['/document-details', id]);
       }, (err) => {
         console.log(err);
-      });
+    });
   }
 
 }

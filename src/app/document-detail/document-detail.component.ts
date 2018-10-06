@@ -34,4 +34,8 @@ export class DocumentDetailComponent implements OnInit {
       });
   }
 
+  deletePhrase(phrase) {
+    console.log(phrase);
+  }
+
 }

@@ -51,13 +51,14 @@ export class DocumentEditComponent implements OnInit {
   }
 
   onFormSubmit() {
-    if (this.documentForm.value.vocabulary != null) {
+    console.log(this.documentForm.value);
+    if (this.documentForm.value.vocabulary != null && this.documentForm.value.vocabulary.length == 1) {
       this.documentForm.controls['vocabulary']
-        .setValue(this.documentForm.value.vocabulary.split(","));
+        .setValue(this.documentForm.value.vocabulary[0].split(","));
     }
-    if (this.documentForm.value.phrases != null) {
+    if (this.documentForm.value.phrases != null && this.documentForm.value.vocabulary.length == 1) {
       this.documentForm.controls['phrases']
-        .setValue(this.documentForm.value.phrases.split(","));
+        .setValue(this.documentForm.value.phrases[0].split(","));
     }
     this.api.updateDocument(this.id, this.documentForm.value)
       .subscribe(res => {
