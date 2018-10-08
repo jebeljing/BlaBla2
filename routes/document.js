@@ -1,7 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Document = require('../models/Document.js');
+var Document = require('../models/Document');
+
+var Theme = require('../models/Theme');
+
+/* GET ALL THE THEMES */
+router.get('/themes', function(req, res, next) {
+    Theme.find(function(err, products) {
+        if (err) return next(err);
+        res.json(products);
+    });
+});
 
 /* GET ALL DOCUMENTS */
 router.get('/', function(req, res, next) {

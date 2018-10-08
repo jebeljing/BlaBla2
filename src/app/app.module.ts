@@ -13,6 +13,7 @@ import { DocumentCreateComponent } from './document-create/document-create.compo
 import { DocumentEditComponent } from './document-edit/document-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemesComponent } from './themes/themes.component';
 
 const appRoutes: Routes = [
   {
@@ -35,10 +36,16 @@ const appRoutes: Routes = [
     component: DocumentEditComponent,
     data: { title: 'Edit Document' }
   },
+  {
+    path: 'themes',
+    component: ThemesComponent,
+    data: { title: 'Theme List' }
+  },
   { path: '',
     redirectTo: '/documents',
     pathMatch: 'full'
-  }
+  },
+  
 ];
 
 @NgModule({
@@ -47,7 +54,8 @@ const appRoutes: Routes = [
     DocumentComponent,
     DocumentDetailComponent,
     DocumentCreateComponent,
-    DocumentEditComponent
+    DocumentEditComponent,
+    ThemesComponent
   ],
   imports: [
     BrowserModule,

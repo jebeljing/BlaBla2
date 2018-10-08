@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
+// var Theme = require('./Theme');
 
 var DocumentSchema = new mongoose.Schema({
-  theme: String, 
+  // theme: {type: mongoose.Schema.Types.ObjectId,  ref: 'Theme'},
+  theme: String,
   title: String,
   body: String,
   vocabulary: [String],

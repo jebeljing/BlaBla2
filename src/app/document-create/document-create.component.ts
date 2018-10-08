@@ -34,6 +34,7 @@ export class DocumentCreateComponent implements OnInit {
   }
 
   onFormSubmit() {
+    console.log(this.documentForm.value);
     if (this.documentForm.value.vocabulary != null) {
       this.documentForm.controls['vocabulary']
         .setValue(this.documentForm.value.vocabulary.split(","));
@@ -42,6 +43,11 @@ export class DocumentCreateComponent implements OnInit {
       this.documentForm.controls['phrases']
         .setValue(this.documentForm.value.phrases.split(","));
     }
+
+    // if (this.documentForm.value.theme != null) {
+    //   this.documentForm.controls['theme']
+    //     .setValue({"name": this.documentForm.value.theme});
+    // }
     
     this.api.postDocument(this.documentForm.value)
       .subscribe(res => {

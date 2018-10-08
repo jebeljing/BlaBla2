@@ -53,6 +53,13 @@ export class ApiService {
       );
   }
 
+  getThemes(): Observable<any> {
+    return this.http.get(`${apiUrl}/themes`, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    );
+  }
+
   private extractData(res: Response) {
     let body = res;
     return body || { };
