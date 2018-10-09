@@ -32,8 +32,10 @@
             [errorStateMatcher]="matcher">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Date" formControlName="date"
-            [errorStateMatcher]="matcher">
+      <input matInput placeholder="Date" [(ngModel)]="date" formControlName="date" 
+        [matDatepicker]="picker1">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
     <div class="button-row">
       <button type="submit" [disabled]="!documentForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>

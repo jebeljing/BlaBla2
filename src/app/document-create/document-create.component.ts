@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-document-create',
@@ -17,7 +18,7 @@ export class DocumentCreateComponent implements OnInit {
   vocabulary: string[] = [];
   phrases: string[] = [];
   author: string = '';
-  date: string = '';
+  date: string='';
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
 
@@ -31,6 +32,9 @@ export class DocumentCreateComponent implements OnInit {
       'date': [null],
       'body': [null, Validators.required]
     });
+    
+    var datePipe = new DatePipe('en-US');
+    this.date = datePipe.transform(new Date(),'MM/dd/yyyy');
   }
 
   onFormSubmit() {
