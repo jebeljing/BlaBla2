@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-document-edit',
@@ -33,6 +34,8 @@ export class DocumentEditComponent implements OnInit {
       'date': [null],
       'body': [null, Validators.required]
     });
+    var datePipe = new DatePipe('en-US');
+    this.date = datePipe.transform(new Date(),'MM/dd/yyyy');
   }
 
   getDocument(id) {
