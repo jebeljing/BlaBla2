@@ -59,7 +59,7 @@ export class DocumentEditComponent implements OnInit {
       this.documentForm.controls['vocabulary']
         .setValue(this.documentForm.value.vocabulary[0].split(","));
     }
-    if (this.documentForm.value.phrases != null && this.documentForm.value.vocabulary.length == 1) {
+    if (this.documentForm.value.phrases != null && this.documentForm.value.phrases.length == 1) {
       this.documentForm.controls['phrases']
         .setValue(this.documentForm.value.phrases[0].split(","));
     }

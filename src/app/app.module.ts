@@ -14,6 +14,7 @@ import { DocumentEditComponent } from './document-edit/document-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemesComponent } from './themes/themes.component';
+import { VocabularyAndPhrasesComponent } from './vocabulary-and-phrases/vocabulary-and-phrases.component';
 
 const appRoutes: Routes = [
   {
@@ -41,6 +42,11 @@ const appRoutes: Routes = [
     component: ThemesComponent,
     data: { title: 'Theme List' }
   },
+  {
+    path: 'vocabulary_phrases',
+    component: VocabularyAndPhrasesComponent,
+    data: { title: 'Vocabulary and Phrases' }
+  },
   { path: '',
     redirectTo: '/documents',
     pathMatch: 'full'
@@ -55,7 +61,8 @@ const appRoutes: Routes = [
     DocumentDetailComponent,
     DocumentCreateComponent,
     DocumentEditComponent,
-    ThemesComponent
+    ThemesComponent,
+    VocabularyAndPhrasesComponent
   ],
   imports: [
     BrowserModule,
