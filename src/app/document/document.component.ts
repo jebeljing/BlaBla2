@@ -11,6 +11,8 @@ import { DataSource } from '@angular/cdk/collections';
 export class DocumentComponent implements OnInit {
 
   documents: any;
+  themes: any;
+  themeMap: Map<string, string> = new Map<string, string>();
   displayedColumns = ['theme', 'title', 'vocabulary', 'phrases'];
   dataSource = new DocumentDataSource(this.api);
   
@@ -21,6 +23,17 @@ export class DocumentComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         this.documents = res;
+      }, err => {
+        console.log(err);
+      });
+
+    this.api.getThemes()
+      .subscribe(res => {
+        this.themes = res;
+        this.themes.forEach(theme => {
+          this.themeMap.set(theme.name, theme.class);
+        });
+        console.log(this.themeMap);
       }, err => {
         console.log(err);
       });
