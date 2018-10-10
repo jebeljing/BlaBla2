@@ -9,9 +9,6 @@
           <!-- Featured image -->
           <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
             <img class="img-fluid" [src]=document.imgUrl alt="Sample image">
-            <a>
-              <div class="mask rgba-white-slight"></div>
-            </a>
           </div>
 
         </div>
@@ -28,6 +25,7 @@
           <!-- Post title -->
             <h3 class="font-weight-bold mb-3">
               <strong>{{document.title}}</strong>
+              <span>&nbsp;&nbsp;</span>
               <a (click)="deleteDocument(document._id)">
                 <i class="fa fa-trash" aria-hidden="true"></i></a>
             </h3>
