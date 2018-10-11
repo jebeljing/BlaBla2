@@ -33,7 +33,7 @@
           <!-- <p>{{document.brief}}...</p> -->
           <p>{{(document.body.length > 200) ? ( document.body | slice: 0: 200) : document.body}}...</p>
           <!-- Read more button -->
-          <a class="btn btn-success btn-md" [routerLink]="['/document-details/', document._id]">Read more</a>
+          <a class="btn btn-primary btn-md" [routerLink]="['/document-details/', document._id]">Read more</a>
 
         </div>
         <div class="col-lg-1"></div>
