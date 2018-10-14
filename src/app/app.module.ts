@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemesComponent } from './themes/themes.component';
 import { VocabularyAndPhrasesComponent } from './vocabulary-and-phrases/vocabulary-and-phrases.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {
@@ -47,8 +48,13 @@ const appRoutes: Routes = [
     component: VocabularyAndPhrasesComponent,
     data: { title: 'Vocabulary and Phrases' }
   },
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  },
   { path: '',
-    redirectTo: '/documents',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   
@@ -62,7 +68,8 @@ const appRoutes: Routes = [
     DocumentCreateComponent,
     DocumentEditComponent,
     ThemesComponent,
-    VocabularyAndPhrasesComponent
+    VocabularyAndPhrasesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

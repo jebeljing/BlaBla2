@@ -10,7 +10,8 @@ import { ApiService} from '../api.service';
 export class DocumentDetailComponent implements OnInit {
 
   document = {};
-
+  themeMap: Map<string, string> = new Map<string, string>();
+  themes: any;
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   ngOnInit() {
@@ -22,6 +23,16 @@ export class DocumentDetailComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.document = data;
+      });
+
+    this.api.getThemes()
+      .subscribe(res => {
+        this.themes = res;
+        this.themes.forEach(theme => {
+          this.themeMap.set(theme.name, theme.class);
+        });
+      }, err => {
+        console.log(err);
       });
   }
 
