@@ -8,6 +8,43 @@
     </div>
   </section>
 
-<div *ngFor="let document of documents">
-  {{document.title}} on {{document.date}}
-</div>
+<!-- Main -->
+<div id="main">
+
+    <!-- Section -->
+      <section class="wrapper style1">
+        <div class="inner">
+          <!-- 2 Columns -->
+            <div class="flex flex-2">
+              <div class="col col1">
+                <div class="image fit">
+                  <a href="generic.html" class="link"><img [src]=document1.imgUrl alt="" /></a>
+                </div>
+              </div>
+              <div class="col col2">
+                <h3>{{document1.title}}</h3>
+                <p>{{(document1.body.length > 200) ? ( document1.body | slice: 0: 200) : document1.body}}...</p>
+                <a href="#" class="button">Learn More</a>
+              </div>
+            </div>
+        </div>
+      </section>
+
+    <!-- Section -->
+      <section class="wrapper style2">
+        <div class="inner">
+          <div class="flex flex-2">
+            <div class="col col2">
+              <h3>{{document2.title}}</h3>
+              <p>{{(document2.body.length > 200) ? ( document2.body | slice: 0: 200) : document2.body}}...</p>
+              <a href="#" class="button">Learn More</a>
+            </div>
+            <div class="col col1 first">
+              <div class="image fit">
+                <a href="generic.html" class="link"><img [src]=document2.imgUrl alt="" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>

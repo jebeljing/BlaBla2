@@ -11,6 +11,8 @@ import { Document } from '../models/Document';
 export class HomeComponent implements OnInit {
 
   documents: any;
+  document1: any;
+  document2: any;
   vocabularyAndPhrases: string[] = [];
   dataSource = new DocumentDataSource(this.api);
 
@@ -28,8 +30,13 @@ export class HomeComponent implements OnInit {
           else if (date1 == date2) return 0;
           else return 1;
         });
-        console.log(documents);
         this.documents = documents.slice(0, 2);
+        console.log(documents);
+
+        this.document1 = this.documents[0];
+        this.document2 = this.documents[1];
+        console.log(this.document1);
+        console.log(this.document2);
       }, err => {
         console.log(err);
       });
