@@ -15,15 +15,15 @@
       <section class="wrapper style1">
         <div class="inner">
           <!-- 2 Columns -->
-            <div class="flex flex-2">
-              <div class="col col1">
+            <div class="flex flex-2 row">
+              <div class="col-6">
                 <div class="image fit">
-                  <a href="generic.html" class="link"><img [src]=document1.imgUrl alt="" /></a>
+                <img [src]=document1.imgUrl alt="" />
                 </div>
               </div>
-              <div class="col col2">
+              <div class="col-6">
                 <h3>{{document1.title}}</h3>
-                <p>{{(document1.body.length > 200) ? ( document1.body | slice: 0: 200) : document1.body}}...</p>
+                <p>{{(document1.body.length > 300) ? ( document1.body | slice: 0: 300) : document1.body}}...</p>
                 <a href="#" class="button">Learn More</a>
               </div>
             </div>
@@ -34,17 +34,63 @@
       <section class="wrapper style2">
         <div class="inner">
           <div class="flex flex-2">
-            <div class="col col2">
+            <div class="col-6">
               <h3>{{document2.title}}</h3>
-              <p>{{(document2.body.length > 200) ? ( document2.body | slice: 0: 200) : document2.body}}...</p>
+              <p>{{(document2.body.length > 300) ? ( document2.body | slice: 0: 300) : document2.body}}...</p>
               <a href="#" class="button">Learn More</a>
             </div>
-            <div class="col col1 first">
+            <div class="col-6">
               <div class="image fit">
-                <a href="generic.html" class="link"><img [src]=document2.imgUrl alt="" /></a>
+                <img [src]=document2.imgUrl alt="" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Section -->
+      <section class="wrapper style1">
+          <div class="inner">
+            <header class="align-center">
+              <h2>Aliquam ipsum purus dolor</h2>
+              <p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
+            </header>
+            <div class="row">
+              <div class="col-sm align-center">
+                <div class="image round fit">
+                  <img src="../../assets/images/pic03.jpg" alt="" />
+                </div>
+                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+                <a href="#" class="button">Learn More</a>
+              </div>
+              <div class="col-sm align-center">
+                <div class="image round fit">
+                  <img src="../../assets/images/pic05.jpg" alt="" />
+                </div>
+                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+                <a href="#" class="button">Learn More</a>
+              </div>
+              <div class="col-sm align-center">
+                <div class="image round fit">
+                  <img src="../../assets/images/pic04.jpg" alt="" />
+                </div>
+                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+                <a href="#" class="button">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </section>
   </div>
+
+  	<!-- Footer -->
+    <footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
