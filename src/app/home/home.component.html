@@ -24,7 +24,7 @@
               <div class="col-6">
                 <h3>{{document1.title}}</h3>
                 <p>{{(document1.body.length > 300) ? ( document1.body | slice: 0: 300) : document1.body}}...</p>
-                <a href="#" class="button">Learn More</a>
+                <a class="button" [routerLink]="['/document-details/', document1._id]">Learn More</a>
               </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="col-6">
               <h3>{{document2.title}}</h3>
               <p>{{(document2.body.length > 300) ? ( document2.body | slice: 0: 300) : document2.body}}...</p>
-              <a href="#" class="button">Learn More</a>
+              <a class="button" [routerLink]="['/document-details/', document2._id]">Learn More</a>
             </div>
             <div class="col-6">
               <div class="image fit">
@@ -52,30 +52,30 @@
       <section class="wrapper style1">
           <div class="inner">
             <header class="align-center">
-              <h2>Aliquam ipsum purus dolor</h2>
-              <p>Cras sagittis turpis sit amet est tempus, sit amet consectetur purus tincidunt.</p>
+              <h2>Resources Pool</h2>
+              <p>This is where I learned and get inspired...</p>
             </header>
             <div class="row">
               <div class="col-sm align-center">
                 <div class="image round fit">
-                  <img src="../../assets/images/pic03.jpg" alt="" />
+                  <img src="../../assets/images/hbr_400x400.jpg" alt="" />
                 </div>
-                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-                <a href="#" class="button">Learn More</a>
+                <p>Harvard Business Review</p>
+                <a href="https://hbr.org/" target="_blank" class="button">Learn More</a>
               </div>
               <div class="col-sm align-center">
                 <div class="image round fit">
-                  <img src="../../assets/images/pic05.jpg" alt="" />
+                  <img src="../../assets/images/wired.png" alt="" />
                 </div>
-                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-                <a href="#" class="button">Learn More</a>
+                <p>Wired</p>
+                <a href="https://www.wired.com/" target="_blank" class="button">Learn More</a>
               </div>
               <div class="col-sm align-center">
                 <div class="image round fit">
-                  <img src="../../assets/images/pic04.jpg" alt="" />
+                  <img src="../../assets/images/entrepreneur.png" alt="" />
                 </div>
-                <p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
-                <a href="#" class="button">Learn More</a>
+                <p>Entrepreneur Magazine</p>
+                <a href="https://www.entrepreneur.com/" target="_blank" class="button">Learn More</a>
               </div>
             </div>
           </div>
