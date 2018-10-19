@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo fixed-top">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo fixed-top scrolling-navbar">
   <mdb-navbar-brand><a class="navbar-brand" href="#">BlaBla2</a></mdb-navbar-brand>
   <links>
       <ul class="navbar-nav mr-auto">
@@ -18,15 +18,10 @@
             <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/vocabulary_phrases']">Vocabulary & Phrases</a>
         </li>
       </ul>
-          <div class="">
-            <!-- Search form -->
-            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-          </div>
   </links>
 
 </mdb-navbar>
-<br>
-<br>
-<br>
+<div class="mytop">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
