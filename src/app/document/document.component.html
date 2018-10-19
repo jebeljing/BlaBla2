@@ -1,5 +1,16 @@
-<!-- Section: Blog v.1 -->
-<section class="my-5" *ngFor="let document of documents"> 
+
+<div class="col-md-6 offset-md-3">
+    <div class="input-group md-form form-md form-2 pl-0">
+      <input [(ngModel)]="searchTitle" class="form-control my-0 py-1 lime-border"
+        type="text" placeholder="Search title goes here" aria-label="Search">
+      <div class="input-group-append">
+        <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey"
+            aria-hidden="true"></i></span>
+      </div>
+    </div>
+</div>
+
+<section class="my-5" *ngFor="let document of documents | filter: searchTitle"> 
     <!-- Grid row -->
       <div class="row">
         <div class="col-md-1"></div>
@@ -18,10 +29,10 @@
         <div class="col-lg-6">
 
           <!-- Category -->
-          <a *ngIf="document.theme" href="#!" class="green-text"><h6 class="font-weight-bold mb-3">
+          <div *ngIf="document.theme" class="green-text"><h6 class="font-weight-bold mb-3">
             <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
             <i class={{themeMap.get(document.theme)}} aria-hidden="true"></i>
-            {{document.theme}}</h6></a>
+            {{document.theme}}</h6></div>
           <!-- Post title -->
             <h3 class="font-weight-bold mb-3">
               <strong>{{document.title}}</strong>

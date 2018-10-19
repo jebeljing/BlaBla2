@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemesComponent } from './themes/themes.component';
 import { VocabularyAndPhrasesComponent } from './vocabulary-and-phrases/vocabulary-and-phrases.component';
 import { HomeComponent } from './home/home.component';
+import { FilterPipe} from './filter.pipe';
 
 const appRoutes: Routes = [
   {
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     DocumentEditComponent,
     ThemesComponent,
     VocabularyAndPhrasesComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

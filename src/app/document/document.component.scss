@@ -1,3 +1,10 @@
-// .fa.fa-trash {
-//     margin-left: 0.5em
-// }
+
+.input-group.md-form.form-md.form-2 input {
+    border: 2px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.input-group.md-form.form-sm.form-2 input.lime-border  {
+    border: 2px solid #cddc39;
+}
