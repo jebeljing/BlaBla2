@@ -45,7 +45,8 @@
           <p>{{(document.body.length > 200) ? ( document.body | slice: 0: 200) : document.body}}...</p>
           <!-- Read more button -->
           <a class="btn btn-primary btn-md" [routerLink]="['/document-details/', document._id]">Read more</a>
-
+          <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>100</span>
+          <span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>10</span>
         </div>
         <div class="col-lg-1"></div>
         <!-- Grid column -->
