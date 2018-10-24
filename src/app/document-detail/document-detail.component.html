@@ -30,8 +30,8 @@
         <div>
           <a class="btn btn-success btn-md" [routerLink]="['/document-edit/', document._id]">Edit</a>
           <a class="btn btn-danger btn-md" (click)="deleteDocument(document._id)">Delete</a>
-          <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>100</span>
-          <span><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>10</span>
+          <a (click)="updateLikes(document._id, document)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a><span>{{document.likes}}</span>
+          <a (click)="updateDislikes(document._id, document)"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a><span>{{document.dislikes}}</span>
         </div>
         <!-- Excerpt -->
         <br>

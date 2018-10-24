@@ -53,6 +53,32 @@ export class DocumentComponent implements OnInit {
       });
   }
 
+  updateLikes(id, document) {
+    if (document.likes == undefined) {
+      document.likes = 0;
+    }
+    document.likes = document.likes + 1;
+    this.api.updateDocument(id, document)
+      .subscribe(res => {
+        console.log(res);
+      }, err => {
+        console.log(err);
+      });
+  }
+
+  updateDislikes(id, document) {
+    if (document.dislikes == undefined) {
+      document.dislikes = 0;
+    }
+    document.dislikes = document.dislikes + 1;
+    this.api.updateDocument(id, document)
+      .subscribe(res => {
+        console.log(res);
+      }, err => {
+        console.log(err);
+      });
+  }
+
 }
 
 export class DocumentDataSource extends DataSource<any> {

@@ -9,7 +9,9 @@ var DocumentSchema = new mongoose.Schema({
   vocabulary: [String],
   phrases: [String],
   author: String,
-  date: String
+  date: String,
+  likes: Number,
+  dislikes: Number
 });
 
 module.exports = mongoose.model('Document', DocumentSchema);

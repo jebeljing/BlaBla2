@@ -42,6 +42,7 @@ export class ApiService {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
+        map(this.extractData),
         catchError(this.handleError)
       );
   }
