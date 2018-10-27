@@ -91,67 +91,48 @@
   <br>
   <!--Main wrapper-->
   <div class="comments-list text-left col-sm-10 offset-md-1">
-    <div class="section-heading">
-        <h3>Comments <span class="badge blue">3</span></h3>
+    <div class="section-heading" *ngIf="document.comments && document.comments.length > 0">
+        <h3>Comments <span class="badge blue">{{document.comments.length}}</span></h3>
     </div>
     <!--First row-->
-    <div class="row">
+    <div class="row" *ngIf="document.comments && document.comments.length > 0">
         <!--Content column-->
-        <div class="col-sm-12 col-12">
-            <a><h3 class="user-name">John Doe</h3></a>
+        <div class="col-sm-12 col-12" *ngFor="let comt of document.comments">
+            <a><h3 class="user-name">{{comt.name}}</h3></a>
             <div class="card-data">
                 <ul class="pl-0 list-unstyled">
-                    <li class="comment-date"><i class="fa fa-clock-o"></i> 05/10/2015</li>
+                    <li class="comment-date"><i class="fa fa-clock-o"></i> {{comt.date | date: 'shortDate'}}</li>
                 </ul>
             </div>
-            <p class="comment-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            <p class="comment-text">{{comt.comment}}</p>
         </div>
         <!--/.Content column-->
     </div>
     <!--/.First row-->
-    <!--Second row-->
-    <div class="row">
-        <!--Content column-->
-        <div class="col-sm-12 col-12">
-            <a><h3 class="user-name">Marta Tev</h3></a>
-            <div class="card-data">
-                <ul class="pl-0 list-unstyled">
-                    <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
-                </ul>
-            </div>
-            <p class="comment-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-        </div>
-        <!--/.Content column-->
-    </div>
-    <!--/.Second row-->
   </div>
   <!--/.Main wrapper-->
   
   <br>
   <!--Section: Leave a reply (Logged In User)-->
   <section>
-  
     <!--Leave a reply form-->
     <div class="reply-form col-sm-10 offset-md-1">
         <h2 class="h1 section-heading">Leave a comment </h2>
-  
         <div class="row">
             <!--Content column-->
-            <div class="col-sm-12 col-12">
-                <div class="md-form">
-                    <input type="text" id="form1" class="form-control" placeholder="Your name">
-                    <textarea type="text" row=2 class="md-textarea form-control" placeholder="Your comment"></textarea>
-                </div>
-            </div>
-  
-            <div class="text-center mx-auto">
-                <button mdbBtn color="primary" class="waves-light" mdbWavesEffect>Submit</button>
-            </div>
+            <form class="col-sm-12 col-12" [formGroup]="commentForm" (ngSubmit)="onFormSubmit(document, commentForm.value)">
+              <div class="md-form">
+                  <input type="text" id="form1" formControlName="name" class="form-control" placeholder="Your name">
+                  <textarea type="text" row=2  formControlName="comment" class="md-textarea form-control" placeholder="Your comment"></textarea>
+              </div>
+              <div class="text-center mx-auto">
+                  <button mdbBtn color="primary" [disabled] = "!commentForm.valid" class="waves-light" mdbWavesEffect>Submit</button>
+              </div>
+            </form>
             <!--/.Content column-->
         </div>
     </div>
     <!--/.Leave a reply form-->
-  
   </section>
 
   <br>
@@ -162,6 +143,5 @@
       <a href="#">blabla2.com</a>
     </div>
     <!-- Copyright -->
-  
   </footer>
   <!-- Footer -->

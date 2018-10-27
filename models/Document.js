@@ -11,7 +11,8 @@ var DocumentSchema = new mongoose.Schema({
   author: String,
   date: String,
   likes: Number,
-  dislikes: Number
+  dislikes: Number,
+  comments: [{name: String, comment: String, date: Date}]
 });
 
 module.exports = mongoose.model('Document', DocumentSchema);
