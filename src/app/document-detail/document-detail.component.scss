@@ -7,3 +7,31 @@
     padding-left: 0.5em;
     padding-right: 0.25em;
 }
+
+.my-btn-delete { 
+    background-color: #C94C24; 
+    background-image: url(../../assets/images/icons/icon_trash.png);
+    display: inline-block;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    line-height: 140%;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-size: 18px 18px;
+    min-width: 28px;
+    min-height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+ }
