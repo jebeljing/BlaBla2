@@ -103,6 +103,15 @@ export class DocumentDetailComponent implements OnInit {
       });
   }
 
+  deleteComment(document, id) {
+    document.comments = document.comments.filter(cmt => cmt._id != id);
+    this.api.updateDocument(document._id, document)
+      .subscribe(res => {
+      }, err => {
+        console.log(err);
+      });
+  }
+
 
   deletePhrase(phrase) {
     console.log(phrase);

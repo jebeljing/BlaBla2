@@ -8,7 +8,7 @@
 
         <!-- Featured image -->
         <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
-          <img class="img-fluid" [src]=document.imgUrl alt="Sample image">
+          <img *ngIf="document.imgUrl" class="img-fluid" [src]=document.imgUrl alt="Sample image">
           <a>
             <div class="mask rgba-white-slight"></div>
           </a>
@@ -98,12 +98,10 @@
     <div class="row" *ngIf="document.comments && document.comments.length > 0">
         <!--Content column-->
         <div class="col-sm-12 col-12" *ngFor="let comt of document.comments">
-            <div>
-              <h3>
-                  <span class="user-name">{{comt.name}}</span>
-                  <a class="my-btn-delete"></a>
-              </h3>
-            </div>
+            <h4>
+                <span class="user-name">{{comt.name}}</span>
+                <a class="my-btn-delete" (click)="deleteComment(document, comt._id)"></a>
+            </h4>
             <div class="card-data" *ngIf="comt.date">
                 <ul class="pl-0 list-unstyled">
                     <li class="comment-date"><i class="fa fa-clock-o"></i> {{comt.date | date: 'shortDate'}}</li>

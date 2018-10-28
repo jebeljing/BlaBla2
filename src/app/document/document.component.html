@@ -19,7 +19,7 @@
 
           <!-- Featured image -->
           <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
-            <img class="img-fluid" [src]=document.imgUrl alt="Sample image">
+            <img *ngIf="document.imgUrl" class="img-fluid" [src]=document.imgUrl alt="Sample image">
           </div>
 
         </div>
