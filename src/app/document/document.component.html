@@ -47,6 +47,7 @@
           <a class="btn btn-primary btn-md" [routerLink]="['/document-details/', document._id]">Read more</a>
           <a (click)="updateLikes(document._id, document)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a><span>{{document.likes}}</span>
           <a (click)="updateDislikes(document._id, document)"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a><span>{{document.dislikes}}</span>
+          <a *ngIf="document.comments && document.comments.length > 0" [routerLink]="['/document-details/', document._id]"><i class="fa fa-comments-o" aria-hidden="true"></i><span>{{document.comments.length}}</span></a>
         </div>
         <div class="col-lg-1"></div>
         <!-- Grid column -->
