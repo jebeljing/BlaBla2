@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Document } from './models/Document';
 
@@ -17,6 +17,15 @@ const apiUrl = "/api";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
+
+  generateMp3(text: string, filename: string): Observable<any> {
+    var data = {'text': text, 'filename': filename};
+    
+    return this.http.post(`${apiUrl}/read`, data, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    );
+  }
 
   getDocuments(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
