@@ -116,19 +116,19 @@ export class DocumentDetailComponent implements OnInit {
     this.api.generateMp3(body, title).subscribe(
       res => {
         console.log("Mp3 generated!");
-        // let audio = new Audio();
-        // audio.src = `../../${title}.mp3`;
-        // console.log(audio.src);
-        // audio.load();
-        // audio.play();
       }, err => {
         console.log("Error????");
         console.log(err);
-        // let audio = new Audio();
-        // audio.src = `../../${title}.mp3`;
-        // console.log(audio.src);
-        // audio.load();
-        // audio.play();
+      }
+    )
+  }
+
+  pauseMp3(title) {
+    this.api.pauseMp3(title).subscribe(
+      res => {
+        console.log(`${title}.mpe paused`);
+      }, err => {
+        console.log(err);
       }
     )
   }

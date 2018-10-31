@@ -18,6 +18,14 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  pauseMp3(filename: string): Observable<any> {
+    return this.http.post(`${apiUrl}/pause`, httpOptions).pipe(
+      map(this.extractData),
+      catchError(this.handleError)
+    );
+
+  }
+
   generateMp3(text: string, filename: string): Observable<any> {
     var data = {'text': text, 'filename': filename};
     

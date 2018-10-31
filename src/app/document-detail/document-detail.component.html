@@ -31,6 +31,7 @@
           <a class="btn btn-success btn-md" [routerLink]="['/document-edit/', document._id]">Edit</a>
           <a class="btn btn-danger btn-md" (click)="deleteDocument(document._id)">Delete</a>
           <a class="btn btn-warning btn-md" (click)="generateMp3(document.body, document.title)">Play</a>
+          <a class="btn btn-warning btn-md" (click)="pauseMp3(document.title)">Pause</a>
           <a (click)="updateLikes(document._id, document)"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a><span>{{document.likes}}</span>
           <a (click)="updateDislikes(document._id, document)"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a><span>{{document.dislikes}}</span>
         </div>

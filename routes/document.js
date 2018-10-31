@@ -5,6 +5,14 @@ var Document = require('../models/Document');
 
 var Theme = require('../models/Theme');
 
+var audio;
+
+/* Pause the mp3 */
+router.post('/pause', function(req, res, next) {
+    this.audio.kill();
+    res.json('success');
+});
+
 
 /* Generate the mp3 */
 router.post('/read', function(req, res, next) {
@@ -22,7 +30,7 @@ router.post('/read', function(req, res, next) {
   const request = {
     input: {text: text},
     // Select the language and SSML Voice Gender (optional)
-    voice: {languageCode: 'en-US', ssmlGender: 'NEUTRAL'},
+    voice: {languageCode: 'en-US', ssmlGender: 'FEMALE'},
     // Select the type of audio encoding
     audioConfig: {audioEncoding: 'MP3'},
   };
@@ -42,7 +50,7 @@ router.post('/read', function(req, res, next) {
       }
       console.log(`Audio content written to file: ${outputFileName}.mp3`);
       var player = require('play-sound')(opts ={})
-      player.play(`${outputFileName}.mp3`, function(err) {
+      this.audio = player.play(`${outputFileName}.mp3`, function(err) {
         if (err) throw err
       })
       res.json('success');
